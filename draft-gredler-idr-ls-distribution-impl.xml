@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
+<?rfc comments="yes"?>
+<?rfc compact="yes"?>
+<?rfc inline="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc subcompact="no"?>
+<?rfc symrefs="yes"?>
+<?rfc toc="yes"?>
+<?rfc tocdepth="3"?>
+<?rfc tocindent="yes"?>
+<?rfc tocompact="yes"?>
+<rfc category="info" docName="draft-gredler-idr-ls-distribution-impl-00" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
+  <front>
+    <title abbrev="BGP Link-State Implementation report">
+    BGP Link-State Information Distribution Implementation Report</title>
+
+    <author fullname="Hannes Gredler" initials="H." surname="Gredler" role="editor">
+      <organization>Juniper Networks, Inc.</organization>
+      <address>
+        <postal>
+          <street>1194 N. Mathilda Ave.</street>
+          <city>Sunnyvale</city>
+          <region>CA</region>
+          <code>94089</code>
+          <country>US</country>
+        </postal>
+        <email>hannes@juniper.net</email>
+      </address>
+    </author>
+
+    <author fullname="Balaji Rajagopalan" initials="B." surname="Rajagopalan">
+      <organization>Juniper Networks, Inc.</organization>
+      <address>
+        <postal>
+          <street>1194 N. Mathilda Ave.</street>
+          <city>Sunnyvale</city>
+          <region>CA</region>
+          <code>94089</code>
+          <country>US</country>
+        </postal>
+        <email>balajir@juniper.net</email>
+      </address>
+    </author>
+
+    <author fullname="Saikat Ray" initials="S." surname="Ray" role="editor">
+      <organization>Cisco Systems, Inc.</organization>
+      <address>
+        <postal>
+          <street>170, West Tasman Drive</street>
+          <city>San Jose</city>
+          <region>CA</region>
+          <code>95134</code>
+          <country>US</country>
+        </postal>
+        <email>sairay@cisco.com</email>
+      </address>
+    </author>
+
+    <author fullname="Manish Bhardwaj" initials="M." surname="Bhardwaj">
+      <organization>Cisco Systems, Inc.</organization>
+      <address>
+        <postal>
+          <street>170, West Tasman Drive</street>
+          <city>San Jose</city>
+          <region>CA</region>
+          <code>95134</code>
+          <country>US</country>
+        </postal>
+        <email>manbhard@cisco.com</email>
+      </address>
+    </author>
+
+    <date day="14" month="February" year="2014"/>
+
+    <workgroup>Inter-Domain Routing</workgroup>
+
+    <abstract>
+      <t>
+        This document is an implementation report for the BGP
+        Link-State Information Distribution
+        protocol as defined in
+        <xref target="I-D.ietf-idr-ls-distribution"/>.
+        The editors did not verify the accuracy of the information provided
+        by respondents. The respondents are experts with the
+        implementations they reported on, and their responses are
+        considered authoritative for the implementations for which their
+        responses represent.  Respondents were asked to only use the YES
+        answer if the feature had at least been tested in the lab.</t>
+      </abstract>
+
+    </front>
+
+  <middle>
+    <section title="Introduction">
+
+      <t>In order to share network link-state and traffic
+        engineering information collected with external components using
+        the BGP routing protocol a new BGP Network Layer Reachability
+        Information (NLRI) encoding format is required.
+      </t>
+
+      <t>
+        This document provides an implementation report for the BGP
+        Link-State Information Distribution NLRI Format as defined in
+        <xref target="I-D.ietf-idr-ls-distribution"/>.
+      </t>
+
+      <t>
+        The editors did not verify the accuracy of the information
+        provided by respondents or by any alternative means. The
+        respondents are experts with the implementations they reported
+        on, and their responses are considered authoritative for the
+        implementations for which their responses represent.
+        Respondents were asked to only use the YES answer if the
+        feature had at least been tested in the lab.
+      </t>
+    </section>
+
+    <section title="Implementation Forms">
+      <t>
+        Contact and implementation information for person filling out this
+        form:
+      </t>
+
+      <t><list style="hanging">
+        <t hangText="IOS-XR "> <vspace blankLines="0"/>
+          Name: Manish Bhardwaj <vspace blankLines="0"/>
+          Email:manbhard@cisco.com <vspace blankLines="0"/>
+          Vendor: Cisco Systems, Inc. <vspace blankLines="0"/>
+          Release: IOS-XR <vspace blankLines="0"/>
+          Protocol Role: Sender, Receiver
+        </t>
+      </list></t>
+
+      <t><list style="hanging">
+        <t hangText="JUNOS"> <vspace blankLines="0"/>
+          Name: Balaji Rajagopalan<vspace blankLines="0"/>
+          Email: balajir@juniper.net<vspace blankLines="0"/>
+          Vendor: Juniper Networks, Inc. <vspace blankLines="0"/>
+          Release: JUNOS <vspace blankLines="0"/>
+          Protocol Role: Sender, Receiver
+        </t>
+      </list></t>
+
+      <!-- FIXME please add the Telefonica data -->
+    </section>
+
+    <section title="NLRI subtypes">
+      <t>
+        Does the implementation support the Network Layer Reachability
+        (NLRI) subtypes as
+        described in Section 3.2 of
+        <xref target="I-D.ietf-idr-ls-distribution"/> ?
+      </t>
+
+      <t>
+        <list style="hanging">
+          <t hangText="N1:">Node NLRI</t>
+          <t hangText="N2:">Link NLRI</t>
+          <t hangText="N3:">IPv4 Topology Prefix NLRI</t>
+          <t hangText="N4:">IPv6 Topology Prefix NLRI</t>
+         </list>
+      </t>
+      <texttable title="" suppress-title="false" align="center" style="full">
+        <ttcol align="left"/>
+        <ttcol align="center">IOS-XR</ttcol>
+        <ttcol align="center">JUNOS</ttcol>
+        <ttcol align="center">TBD</ttcol>
+          <!--            IOS-XR      JUNOS     TBD -->
+
+          <c>Rcv.N1</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.N1</c>   <c>YES</c> <c>YES</c> <c>---</c>
+
+          <c>Rcv.N2</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.N2</c>   <c>YES</c> <c>YES</c> <c>---</c>
+
+          <c>Rcv.N3</c>   <c>YES</c> <c>NO(1)</c> <c>---</c>
+          <c>Snd.N3</c>   <c>YES</c> <c>NO(1)</c>  <c>---</c>
+
+          <c>Rcv.N4</c>   <c>YES</c> <c>NO(1)</c> <c>---</c>
+          <c>Snd.N4</c>   <c>YES</c> <c>NO(1)</c>  <c>---</c>
+      </texttable>
+      <t>
+        <list style="format Note %d:">
+          <t> Topology Prefix NLRIs get transparently relayed.</t>
+        </list>
+      </t>
+    </section>
+
+    <section title="Link NLRI TLV support">
+      <t>
+        Does the implementation support the TLVs 
+        described in Section 7 of
+        <xref target="I-D.ietf-idr-ls-distribution"/> ?
+      </t>
+
+      <t>
+        <list style="hanging">
+          <t hangText="TLV 256:">Local Node Descriptor</t>
+          <t hangText="TLV 257:">Remote Node Descriptor</t>
+          <t hangText="TLV 258:">Link Local/Remote Identifier</t>
+          <t hangText="TLV 259:">IPv4 Interface address</t>
+          <t hangText="TLV 260:">IPv4 Neighbor address</t>
+          <t hangText="TLV 261:">IPv6 Interface address</t>
+          <t hangText="TLV 262:">IPv6 Neighbor address</t>
+          <t hangText="TLV 263:">Multi-Topology IDs</t>
+
+          <t hangText="TLV 512:">Autonomous System</t>
+          <t hangText="TLV 513:">BGP-LS Identifier</t>
+          <t hangText="TLV 514:">Area ID</t>
+          <t hangText="TLV 515:">IGP Router ID</t>
+
+          <t hangText="TLV 1028:">IPv4 router-ID of Local Node</t>
+          <t hangText="TLV 1029:">IPv6 router-ID of Local Node</t>
+          <t hangText="TLV 1030:">IPv4 router-ID of Remote Node</t>
+          <t hangText="TLV 1031:">IPv6 router-ID of Remote Node</t>
+
+          <t hangText="TLV 1088:">Administrative group (color)</t>
+          <t hangText="TLV 1089:">Maximum link bandwidth</t>
+          <t hangText="TLV 1090:">Maximum reservable link bandwidth</t>
+          <t hangText="TLV 1091:">Unreserved link  bandwidth</t>
+          <t hangText="TLV 1092:">TE default Metric</t>
+          <t hangText="TLV 1093:">Link Protection Type</t>
+          <t hangText="TLV 1094:">MPLS Protocol Mask</t>
+          <t hangText="TLV 1095:">IGP Metric</t>
+          <t hangText="TLV 1096:">Shared Risk Link Group</t>
+          <t hangText="TLV 1097:">Opaque Link attribute</t>
+          <t hangText="TLV 1098:">Link name attribute</t>
+         </list>
+      </t>
+      <texttable title="" suppress-title="false" align="center" style="full">
+        <ttcol align="left"/>
+        <ttcol align="center">IOS-XR</ttcol>
+        <ttcol align="center">JUNOS</ttcol>
+        <ttcol align="center">TBD</ttcol>
+          <!--                  IOS-XR      JUNOS     TBD -->
+
+          <c>Rcv.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  257</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  257</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  258</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  258</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  259</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  259</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  260</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  260</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  261</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  261</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  262</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  262</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  263</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  263</c>   <c>---</c> <c>NO</c>  <c>---</c>
+
+          <c>Rcv.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  513</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  513</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  514</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  514</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
+
+          <c>Rcv.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1031</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1031</c>   <c>YES</c> <c>YES</c> <c>---</c>
+
+          <c>Rcv.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1090</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1090</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1091</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1091</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1092</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1092</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1093</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1093</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1094</c>   <c>NO</c>  <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1094</c>   <c>NO</c>  <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1095</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1095</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1096</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1097</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1097</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1098</c>   <c>NO</c>  <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1098</c>   <c>NO</c>  <c>NO</c>  <c>---</c>
+      </texttable>
+    </section> <!-- End Link NLRI TLV Support -->
+
+    <section title="Node NLRI TLV support">
+      <t>
+        Does the implementation support the TLVs 
+        described in Section 7 of
+        <xref target="I-D.ietf-idr-ls-distribution"/> ?
+      </t>
+
+      <t>
+        <list style="hanging">
+          <t hangText="TLV 256:">Local Node Descriptor</t>
+          <t hangText="TLV 263:">Multi-Topology IDs</t>
+
+          <t hangText="TLV 512:">Autonomous System</t>
+          <t hangText="TLV 513:">BGP-LS Identifier</t>
+          <t hangText="TLV 514:">Area ID</t>
+          <t hangText="TLV 515:">IGP Router ID</t>
+
+          <t hangText="TLV 1024:">Node flag bits</t>
+          <t hangText="TLV 1025:">Opaque Node properties</t>
+          <t hangText="TLV 1026:">Node name</t>
+          <t hangText="TLV 1027:">IS-IS Area Identifier</t>
+
+          <t hangText="TLV 1028:">IPv4 router-ID of Local Node</t>
+          <t hangText="TLV 1029:">IPv6 router-ID of Local Node</t>
+         </list>
+      </t>
+      <texttable title="" suppress-title="false" align="center" style="full">
+        <ttcol align="left"/>
+        <ttcol align="center">IOS-XR</ttcol>
+        <ttcol align="center">JUNOS</ttcol>
+        <ttcol align="center">TBD</ttcol>
+          <!--                  IOS-XR      JUNOS     TBD -->
+
+          <c>Rcv.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  263</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  263</c>   <c>---</c> <c>NO</c>  <c>---</c>
+
+          <c>Rcv.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  513</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  513</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  514</c>   <c>---</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  514</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
+
+          <c>Rcv.TLV  1024</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1024</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1025</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1025</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1026</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1026</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1027</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1027</c>   <c>---</c> <c>NO</c> <c>---</c>
+
+          <c>Rcv.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Snd.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
+      </texttable>
+    </section>  <!-- End Node NLRI TLV Support -->
+
+    <section title="Prefix NLRI TLV support">
+      <t>
+        Does the implementation support the TLVs 
+        described in Section 7 of
+        <xref target="I-D.ietf-idr-ls-distribution"/> ?
+      </t>
+
+      <t>
+        <list style="hanging">
+          <t hangText="TLV 256:">Local Node Descriptor</t>
+          <t hangText="TLV 263:">Multi-Topology IDs</t>
+          <t hangText="TLV 264:">OSPF route type</t>
+          <t hangText="TLV 265:">IP Reachability information</t>
+
+          <t hangText="TLV 1152:">IGP Flags</t>
+          <t hangText="TLV 1153:">Route Tag</t>
+          <t hangText="TLV 1154:">Extended Tag</t>
+          <t hangText="TLV 1155:">Prefix Metric</t>
+          <t hangText="TLV 1156:">OSPF Forwarding Address</t>
+          <t hangText="TLV 1157:">Opaque Prefix Atrribute</t>
+         </list>
+      </t>
+      <texttable title="" suppress-title="false" align="center" style="full">
+        <ttcol align="left"/>
+        <ttcol align="center">IOS-XR</ttcol>
+        <ttcol align="center">JUNOS</ttcol>
+        <ttcol align="center">TBD</ttcol>
+          <!--                  IOS-XR      JUNOS     TBD -->
+
+          <c>Rcv.TLV   256</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   256</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   263</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   263</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   264</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   264</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   265</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   265</c>   <c>---</c> <c>NO</c>  <c>---</c>
+
+
+          <c>Rcv.TLV  1152</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1152</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1153</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1153</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1154</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1154</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1155</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1155</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1156</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1156</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1157</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1157</c>   <c>---</c> <c>NO</c>  <c>---</c>
+
+      </texttable>
+    </section>  <!-- End Prefix NLRI TLV Support -->
+
+
+    <section title="Interoperable Implementations">
+      <t>
+        List other implementations that you have tested interoperability of
+        BGP-LS Protocol Implementation.
+      </t>
+
+      <section title="Cisco Implementation">
+        <t>
+          Cisco: The Cisco Systems, Inc. IOS-XR implementation should be
+          interoperable with other vendor BGP-LS Protocol
+          implementations. In particular we have tested our
+          interoperability with Juniper's JUNOS and Telefonica's XXX
+          implementation.
+        </t>
+      </section>
+
+      <section title="Juniper Implementation">
+        <t>
+          Juniper: The Juniper Networks, Inc. JUNOS implementation
+          should be interoperable with other vendor BGP-LS Protocol
+          implementations. In particular we have tested our
+          interoperability with Cisco Systems, Inc. IOS-XR
+          implementation.
+        </t>
+      </section>
+
+      <section title="TBD Implementation">
+        <t>
+          TBD: The TBD implementation has been tested by us with other
+          implementations. It was so buggy that we were rolling on the
+          floor laughing. We think this was either due to bad star
+          alignment or increased solar flare activity.
+        </t>
+      </section>
+
+    </section>
+
+    <section anchor="IANA" title="IANA Considerations" toc="default">
+      <t>
+        This document makes no request of IANA.
+      </t>
+
+      <t>
+        Note to RFC Editor: The IANA has requested that this section
+        remain in the document upon publication as an RFC.  This note
+        to the RFC Editor, however, may be removed.
+      </t>
+    </section>
+
+    <section title="Security considerations">
+      <t> No new security issues are introduced to the BGP Link-State
+        Information Distribution Protocol defined in
+        <xref target="I-D.ietf-idr-ls-distribution"/>.
+      </t>
+    </section>
+
+    <section anchor="Acknowledgements" title="Acknowledgements" toc="default">
+      <t>
+        The authors would like to thank Stefano Previdi, Jan Medved for their
+        contributions to this document.
+      </t>
+    </section>
+
+  </middle>
+
+  <back>
+    <references title="Informative References">
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-idr-ls-distribution-04.xml"?>
+    </references>
+  </back>
+</rfc>
