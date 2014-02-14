@@ -343,8 +343,8 @@
           <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
           <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
 
-          <c>Rcv.TLV  1024</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV  1024</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1024</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1024</c>   <c>YES</c> <c>NO</c>  <c>---</c>
           <c>Rcv.TLV  1025</c>   <c>---</c> <c>NO</c>  <c>---</c>
           <c>Snd.TLV  1025</c>   <c>---</c> <c>NO</c>  <c>---</c>
           <c>Rcv.TLV  1026</c>   <c>---</c> <c>NO</c>  <c>---</c>
@@ -388,26 +388,26 @@
         <ttcol align="center">TBD</ttcol>
           <!--                  IOS-XR      JUNOS     TBD -->
 
-          <c>Rcv.TLV   256</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV   256</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV   263</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV   263</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV   264</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV   264</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV   265</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV   265</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   256</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   256</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   263</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   263</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   264</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   264</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   265</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV   265</c>   <c>YES</c> <c>NO</c>  <c>---</c>
 
 
-          <c>Rcv.TLV  1152</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV  1152</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV  1153</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV  1153</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV  1154</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV  1154</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV  1155</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV  1155</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Rcv.TLV  1156</c>   <c>---</c> <c>NO</c>  <c>---</c>
-          <c>Snd.TLV  1156</c>   <c>---</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1152</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1152</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1153</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1153</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1154</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1154</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1155</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1155</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1156</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Snd.TLV  1156</c>   <c>YES</c> <c>NO</c>  <c>---</c>
           <c>Rcv.TLV  1157</c>   <c>---</c> <c>NO</c>  <c>---</c>
           <c>Snd.TLV  1157</c>   <c>---</c> <c>NO</c>  <c>---</c>
 
@@ -446,7 +446,7 @@
           TBD: The TBD implementation has been tested by us with other
           implementations. It was so buggy that we were rolling on the
           floor laughing. We think this was either due to bad star
-          alignment or increased solar flare activity.
+          alignment or perhaps increased solar flare activity.
         </t>
       </section>
 
