@@ -574,8 +574,8 @@
 
     <section anchor="Acknowledgements" title="Acknowledgements" toc="default">
       <t>
-        The authors would like to thank Stefano Previdi, Jan Medved for their
-        contributions to this document.
+        The authors would like to thank Stefano Previdi, Jan Medved and Chris Bowers
+	for their contributions to this document.
       </t>
     </section>
 
@@ -583,7 +583,7 @@
 
   <back>
     <references title="Informative References">
-      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-idr-ls-distribution-04.xml"?>
+      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-idr-ls-distribution-05.xml"?>
     </references>
   </back>
 </rfc>
