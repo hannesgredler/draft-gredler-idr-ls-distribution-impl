@@ -195,11 +195,6 @@
           <c>Snd.N4</c>   <c>YES</c> <c>YES</c> <c>NO</c>
           <c>Org.N4</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
       </texttable>
-      <t>
-        <list style="format Note %d:">
-          <t> Topology Prefix NLRIs get transparently relayed.</t>
-        </list>
-      </t>
     </section>
 
     <section title="Link NLRI TLV support">
@@ -343,7 +338,7 @@
 
 	  <c>Rcv.TLV  1095</c>   <c>YES</c> <c>YES</c> <c>YES</c>
           <c>Snd.TLV  1095</c>   <c>YES</c> <c>YES</c> <c>NO</c>
-          <c>Org.TLV  1095</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
+          <c>Org.TLV  1095</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
 
 	  <c>Rcv.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>YES</c>
           <c>Snd.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>NO</c>
@@ -583,7 +578,7 @@
 
   <back>
     <references title="Informative References">
-      <?rfc include="http://xml.resource.org/public/rfc/bibxml3/reference.I-D.draft-ietf-idr-ls-distribution-05.xml"?>
+      <?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-ietf-idr-ls-distribution-05.xml"?>
     </references>
   </back>
 </rfc>
