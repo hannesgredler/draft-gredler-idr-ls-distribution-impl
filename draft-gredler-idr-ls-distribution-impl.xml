@@ -10,9 +10,9 @@
 <?rfc tocdepth="3"?>
 <?rfc tocindent="yes"?>
 <?rfc tocompact="yes"?>
-<rfc category="info" docName="draft-gredler-idr-ls-distribution-impl-00" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
+<rfc category="info" docName="draft-gredler-idr-ls-distribution-impl-01" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
   <front>
-    <title abbrev="BGP Link-State Implementation report">
+    <title abbrev="BGP Link-State Implementation Report">
     BGP Link-State Information Distribution Implementation Report</title>
 
     <author fullname="Hannes Gredler" initials="H." surname="Gredler" role="editor">
@@ -71,7 +71,7 @@
       </address>
     </author>
 
-    <date day="14" month="February" year="2014"/>
+    <date day="4" month="July" year="2014"/>
 
     <workgroup>Inter-Domain Routing</workgroup>
 
@@ -143,6 +143,16 @@
         </t>
       </list></t>
 
+      <t><list style="hanging">
+        <t hangText="OpenDaylight"> <vspace blankLines="0"/>
+          Name: Dana Kutenicsova<vspace blankLines="0"/>
+          Email: dkutenic@cisco.com<vspace blankLines="0"/>
+          Vendor: OpenDaylight Project, Inc.<vspace blankLines="0"/>
+          Release: ODL Hydrogen<vspace blankLines="0"/>
+          Protocol Role: Receiver
+        </t>
+      </list></t>
+
       <!-- FIXME please add the Telefonica data -->
     </section>
 
@@ -166,24 +176,24 @@
         <ttcol align="left"/>
         <ttcol align="center">IOS-XR</ttcol>
         <ttcol align="center">JUNOS</ttcol>
-        <ttcol align="center">TBD</ttcol>
-          <!--            IOS-XR      JUNOS     TBD -->
+        <ttcol align="center">ODL</ttcol>
+          <!--            IOS-XR      JUNOS     ODL -->
 
-          <c>Rcv.N1</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.N1</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.N1</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.N1</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.N1</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.N1</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-          <c>Rcv.N2</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.N2</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.N2</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.N2</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.N2</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.N2</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-          <c>Rcv.N3</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.N3</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.N3</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.N3</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.N3</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.N3</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-          <c>Rcv.N4</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.N4</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.N4</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.N4</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.N4</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.N4</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
       </texttable>
       <t>
         <list style="format Note %d:">
@@ -222,7 +232,7 @@
           <t hangText="TLV 1088:">Administrative group (color)</t>
           <t hangText="TLV 1089:">Maximum link bandwidth</t>
           <t hangText="TLV 1090:">Maximum reservable link bandwidth</t>
-          <t hangText="TLV 1091:">Unreserved link  bandwidth</t>
+          <t hangText="TLV 1091:">Unreserved link bandwidth</t>
           <t hangText="TLV 1092:">TE default Metric</t>
           <t hangText="TLV 1093:">Link Protection Type</t>
           <t hangText="TLV 1094:">MPLS Protocol Mask</t>
@@ -236,116 +246,116 @@
         <ttcol align="left"/>
         <ttcol align="center">IOS-XR</ttcol>
         <ttcol align="center">JUNOS</ttcol>
-        <ttcol align="center">TBD</ttcol>
-          <!--                  IOS-XR      JUNOS     TBD -->
+        <ttcol align="center">ODL</ttcol>
+          <!--                  IOS-XR      JUNOS     ODL -->
 
-          <c>Rcv.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  256</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  256</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  256</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  257</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  257</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  257</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  257</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  257</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  257</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  258</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  258</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  258</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  258</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  258</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  258</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  259</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  259</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  259</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  259</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  259</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  259</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  260</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  260</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  260</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  260</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  260</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  260</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  261</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  261</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  261</c>   <c>NO</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  261</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  261</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  261</c>   <c>NO</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  262</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  262</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  262</c>   <c>NO</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  262</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  262</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  262</c>   <c>NO</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  263</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  263</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  263</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  263</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  263</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  263</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-          <c>Rcv.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  512</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  512</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  512</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  513</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  513</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  513</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  513</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  513</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  513</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  514</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  514</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  514</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  514</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  514</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  514</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  515</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-          <c>Rcv.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1029</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1029</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1030</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1031</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1031</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1031</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1031</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1031</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1031</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-          <c>Rcv.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1088</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1089</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1090</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1090</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1090</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  1090</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1090</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1090</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1091</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1091</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1091</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  1091</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1091</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1091</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1092</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1092</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1092</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  1092</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1092</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1092</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1093</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1093</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1093</c>   <c>NO</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1093</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1093</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1093</c>   <c>NO</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1094</c>   <c>YES</c>  <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1094</c>   <c>YES</c>  <c>YES</c> <c>---</c>
-          <c>Org.TLV  1094</c>   <c>YES</c>  <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1094</c>   <c>YES</c>  <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1094</c>   <c>YES</c>  <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1094</c>   <c>YES</c>  <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1095</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1095</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1095</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1095</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1095</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1095</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1096</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1097</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1097</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1097</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1097</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Snd.TLV  1097</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1097</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1098</c>   <c>YES</c>  <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1098</c>   <c>YES</c>  <c>YES</c> <c>---</c>
-          <c>Org.TLV  1098</c>   <c>NO</c>  <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1098</c>   <c>YES</c>  <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1098</c>   <c>YES</c>  <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1098</c>   <c>NO</c>  <c>NO</c>  <c>NO</c>
       </texttable>
     </section> <!-- End Link NLRI TLV Support -->
 
@@ -379,56 +389,56 @@
         <ttcol align="left"/>
         <ttcol align="center">IOS-XR</ttcol>
         <ttcol align="center">JUNOS</ttcol>
-        <ttcol align="center">TBD</ttcol>
-          <!--                  IOS-XR      JUNOS     TBD -->
+        <ttcol align="center">ODL</ttcol>
+          <!--                  IOS-XR      JUNOS     ODL -->
 
-          <c>Rcv.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  256</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  256</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  256</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  256</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  263</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  263</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  263</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  263</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  263</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  263</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-          <c>Rcv.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  512</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  512</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  512</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  512</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  513</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  513</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  513</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  513</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  513</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  513</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  514</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  514</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  514</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  514</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  514</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  514</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  515</c>   <c>YES</c> <c>YES</c> <c>---</c>
+	  <c>Rcv.TLV  515</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  515</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  515</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-          <c>Rcv.TLV  1024</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1024</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1024</c>   <c>YES</c> <c>YES</c>  <c>---</c>
+          <c>Rcv.TLV  1024</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1024</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1024</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1025</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1025</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1025</c>   <c>YES</c> <c>NO</c>   <c>---</c>
+	  <c>Rcv.TLV  1025</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Snd.TLV  1025</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1025</c>   <c>YES</c> <c>NO</c>   <c>NO</c>
 
-	  <c>Rcv.TLV  1026</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1026</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1026</c>   <c>YES</c> <c>NO</c>   <c>---</c>
+	  <c>Rcv.TLV  1026</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1026</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1026</c>   <c>YES</c> <c>NO</c>   <c>NO</c>
 
-	  <c>Rcv.TLV  1027</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1027</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1027</c>   <c>YES</c> <c>NO</c>   <c>---</c>
+	  <c>Rcv.TLV  1027</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1027</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1027</c>   <c>YES</c> <c>NO</c>   <c>NO</c>
 
-          <c>Rcv.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>---</c>
+          <c>Rcv.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1028</c>   <c>YES</c> <c>YES</c> <c>NO</c>
 
-	  <c>Rcv.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Snd.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>---</c>
-          <c>Org.TLV  1029</c>   <c>YES</c> <c>NO</c> <c>---</c>
+	  <c>Rcv.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>YES</c>
+          <c>Snd.TLV  1029</c>   <c>YES</c> <c>YES</c> <c>NO</c>
+          <c>Org.TLV  1029</c>   <c>YES</c> <c>NO</c> <c>NO</c>
       </texttable>
     </section>  <!-- End Node NLRI TLV Support -->
 
@@ -458,48 +468,48 @@
         <ttcol align="left"/>
         <ttcol align="center">IOS-XR</ttcol>
         <ttcol align="center">JUNOS</ttcol>
-        <ttcol align="center">TBD</ttcol>
-          <!--                  IOS-XR      JUNOS     TBD -->
+        <ttcol align="center">ODL</ttcol>
+          <!--                  IOS-XR      JUNOS     ODL -->
 
-          <c>Rcv.TLV   256</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV   256</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV   256</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV   256</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV   256</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV   256</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV   263</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV   263</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV   263</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV   263</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV   263</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV   263</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV   264</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV   264</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV   264</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV   264</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV   264</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV   264</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV   265</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV   265</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV   265</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV   265</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV   265</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV   265</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-          <c>Rcv.TLV  1152</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1152</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1152</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+          <c>Rcv.TLV  1152</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1152</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1152</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1153</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1153</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1153</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1153</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1153</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1153</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1154</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1154</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1154</c>   <c>NO</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1154</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1154</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1154</c>   <c>NO</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1155</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1155</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1155</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1155</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1155</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1155</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1156</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1156</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1156</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1156</c>   <c>YES</c> <c>YES</c>  <c>YES</c>
+          <c>Snd.TLV  1156</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1156</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
-	  <c>Rcv.TLV  1157</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Snd.TLV  1157</c>   <c>YES</c> <c>YES</c>  <c>---</c>
-          <c>Org.TLV  1157</c>   <c>YES</c> <c>NO</c>  <c>---</c>
+	  <c>Rcv.TLV  1157</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Snd.TLV  1157</c>   <c>YES</c> <c>YES</c>  <c>NO</c>
+          <c>Org.TLV  1157</c>   <c>YES</c> <c>NO</c>  <c>NO</c>
 
       </texttable>
     </section>  <!-- End Prefix NLRI TLV Support -->
@@ -515,7 +525,7 @@
         <t>
           Cisco: The Cisco Systems, Inc. IOS-XR implementation should be
           interoperable with other vendor BGP-LS Protocol
-          implementations. In particular we have tested our
+          implementations. In particular, we have tested our
           interoperability with Juniper's JUNOS implementation.
         </t>
       </section>
@@ -524,18 +534,20 @@
         <t>
           Juniper: The Juniper Networks, Inc. JUNOS implementation
           should be interoperable with other vendor BGP-LS Protocol
-          implementations. In particular we have tested our
+          implementations. In particular, we have tested our
           interoperability with Cisco Systems, Inc. IOS-XR
-          implementation.
+          implementation and the Opendaylight implementation.
         </t>
       </section>
 
-      <section title="TBD Implementation">
+      <section title="OpenDaylight Implementation">
         <t>
-          TBD: The TBD implementation has been tested by us with other
-          implementations. It was so buggy that we were rolling on the
-          floor laughing. We think this was either due to bad star
-          alignment or perhaps increased solar flare activity.
+          Opendaylight: The Opendaylight implementation should be interoperable
+		  with other vendor BGP-LS Protocol implementations.  In particular, we
+		  have tested our interoperability with Juniper's JUNOS implementation
+		  and the Cisco Systems, Inc. IOS-XR implementation. BGP receiver
+		  is implemented in OpenDaylight Hydrogen release. BGP sender functionality
+		  is planned in upcoming Helium release.
         </t>
       </section>
 
