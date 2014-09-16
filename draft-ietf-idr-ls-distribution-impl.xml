@@ -121,6 +121,12 @@
       </t>
 
       <t>
+	The scope of the interoperability test is sucessful
+	encoding and decoding of BGP-LS advertisements.
+	No application specific logic has been verified.
+      </t>
+
+      <t>
         The editors did not verify the accuracy of the information
         provided by respondents or by any alternative means. The
         respondents are experts with the implementations they reported
@@ -544,7 +550,7 @@
           Juniper: The Juniper Networks, Inc. JUNOS implementation
           should be interoperable with other vendor BGP-LS Protocol
           implementations. In particular, we have tested our
-          interoperability with Cisco Systems, Inc. IOS-XR
+          interoperability with the Cisco Systems, Inc. IOS-XR
           implementation and the Opendaylight implementation.
         </t>
       </section>
@@ -555,8 +561,8 @@
 		  with other vendor BGP-LS Protocol implementations.  In particular, we
 		  have tested our interoperability with Juniper's JUNOS implementation
 		  and the Cisco Systems, Inc. IOS-XR implementation. BGP receiver
-		  is implemented in OpenDaylight Hydrogen release. BGP sender functionality
-		  is planned in upcoming Helium release.
+		  is implemented in the OpenDaylight Hydrogen release. BGP sender functionality
+		  is planned in the upcoming Helium release.
         </t>
       </section>
 
@@ -575,7 +581,7 @@
     </section>
 
     <section title="Security considerations">
-      <t> No new security issues are introduced to the BGP Link-State
+      <t> No new security issues are introduced by the BGP Link-State
         Information Distribution Protocol defined in
         <xref target="I-D.ietf-idr-ls-distribution"/>.
       </t>
