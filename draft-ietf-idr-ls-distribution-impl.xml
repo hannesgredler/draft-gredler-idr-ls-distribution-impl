@@ -10,7 +10,7 @@
 <?rfc tocdepth="3"?>
 <?rfc tocindent="yes"?>
 <?rfc tocompact="yes"?>
-<rfc category="info" docName="draft-ietf-idr-ls-distribution-impl-02" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
+<rfc category="info" docName="draft-ietf-idr-ls-distribution-impl-03" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="BGP Link-State Implementation Report">
     BGP Link-State Information Distribution Implementation Report</title>
@@ -85,7 +85,7 @@
       </address>
     </author>
 
-    <date day="29" month="January" year="2015"/>
+    <date day="30" month="January" year="2015"/>
 
     <workgroup>Inter-Domain Routing</workgroup>
 
@@ -595,7 +595,7 @@
   </middle>
 
   <back>
-    <references title="Informative References">
+    <references title="Normative References">
       <?rfc include="http://xml2rfc.tools.ietf.org/public/rfc/bibxml3/reference.I-D.draft-ietf-idr-ls-distribution-10.xml"?>
     </references>
   </back>
