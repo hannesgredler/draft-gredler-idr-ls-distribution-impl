@@ -635,7 +635,8 @@
       <section title="Netphony Implementation">
 	<t>
 	  Netphony is an open-source implementation of networking protocols.
-	  The encoding of BGP-LS is available at https://github.com/telefonicaid/netphony-network-protocols.
+	  The encoding of BGP-LS is available at
+	  <eref target="https://github.com/telefonicaid/netphony-network-protocols">Github</eref>.
 	  Netphony BGP-LS implementation is known to interoperate with
 	  Telecom Italia Implementation, CTTC Implementation and CNIT Implementation.
 	</t>
