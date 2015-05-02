@@ -527,7 +527,7 @@
           <t hangText="TLV 1154:">Extended Tag</t>
           <t hangText="TLV 1155:">Prefix Metric</t>
           <t hangText="TLV 1156:">OSPF Forwarding Address</t>
-          <t hangText="TLV 1157:">Opaque Prefix Atrribute</t>
+          <t hangText="TLV 1157:">Opaque Prefix Attribute</t>
          </list>
       </t>
       <texttable title="" suppress-title="false" align="center" style="full">
@@ -632,12 +632,12 @@
 	</t>
       </section>
 
-      <section title="NetphonY Implementation">
+      <section title="Netphony Implementation">
 	<t>
 	  Netphony is an open-source implementation of networking protocols.
 	  The encoding of BGP-LS is available at https://github.com/telefonicaid/netphony-network-protocols.
 	  Netphony BGP-LS implementation is known to interoperate with
-	  Telecom Italia Implemenation, CTTC Implementation and CNIT Implemenation.
+	  Telecom Italia Implementation, CTTC Implementation and CNIT Implementation.
 	</t>
       </section>
 
@@ -647,8 +647,8 @@
 	  which uses BGP-LS as a north bound interface to export the TED used to other entities,
 	  or as an interface to provide the TED on which the PCE operates on.
 	  It has been developed in the context of the IDEALIST FP7 project.
-          It has been tested with Telefonica impementation, in a multi-partner
-	  control plane testbed that uses a hierarchical PCE to perform multidomain
+          It has been tested with Telefonica implementation, in a multi-partner
+	  control plane testbed that uses a hierarchical PCE to perform multi-domain
 	  path computation. BGP-LS is used to export (abstracted or physical)
 	  domain TE information from the child PCE to the parent PCE.
 	</t>
@@ -657,7 +657,7 @@
       <section title="CNIT Implementation">
 	<t>
 	  The CNIT implementation is part of the GMPLS-PCE control plane
-	  software suitably extended to handle flexgrid and advanced
+	  software suitably extended to handle Flexgrid and advanced
 	  bandwidth-variable transponders. The PCE includes a BGP-LS speaker module,
 	  developed in C++ and running on Linux, able to export TED topology,
 	  both in a static and dynamic fashion, triggered by PCEP notifications,
@@ -666,7 +666,7 @@
 	  central frequencies utilization information.
 
 	  The BGP-LS speaker has been evaluated and tested with Telefonica implementation
-	  in a child PCE configuration controlling a real flexgrid data plane domain
+	  in a child PCE configuration controlling a real Flexgrid data plane domain
 	  and exporting link state information to a parent PCE performing inter-domain
 	  end to end path computation.
 	  Development has been done in the context of the FP7 IDEALIST project.
