@@ -10,7 +10,7 @@
 <?rfc tocdepth="3"?>
 <?rfc tocindent="yes"?>
 <?rfc tocompact="yes"?>
-<rfc category="info" docName="draft-ietf-idr-ls-distribution-impl-04" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
+<rfc category="info" docName="draft-ietf-idr-ls-distribution-impl-05" ipr="trust200902" obsoletes="" updates="" submissionType="IETF" xml:lang="en">
   <front>
     <title abbrev="BGP Link-State Implementation Report">
     BGP Link-State Information Distribution Implementation Report</title>
@@ -58,15 +58,7 @@
     </author>
 
     <author fullname="Saikat Ray" initials="S." surname="Ray">
-      <organization>Google</organization>
       <address>
-        <postal>
-          <street>1600 Amphitheatre Parkway</street>
-          <city>Mountain View</city>
-          <region>CA</region>
-          <code>94043</code>
-          <country>US</country>
-        </postal>
         <email>raysaikat@gmail.com</email>
       </address>
     </author>
@@ -85,7 +77,7 @@
       </address>
     </author>
 
-    <date day="2" month="May" year="2015"/>
+    <date day="5" month="May" year="2015"/>
 
     <workgroup>Inter-Domain Routing</workgroup>
 
